@@ -82,3 +82,7 @@ This code sets up an Express server for handling file uploads, downloads, renami
 - **Archiver Usage**: Utilizes the `archiver` package to compress files into ZIP format for batch downloads.
 
 > This setup provides a comprehensive file management system using Node.js, Express, and MongoDB, facilitating file operations via RESTful API endpoints.
+
+# or, Checkout this video demonstration
+
+https://github.com/user-attachments/assets/16fd94bb-7095-406d-a9e7-09cb3b1d18b0
