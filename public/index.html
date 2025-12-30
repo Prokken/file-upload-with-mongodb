@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload with MongoDB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📁 File Management System</h1>
+            <p>Upload, manage, and download your files</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="card">
+                <h2>Upload Files</h2>
+                <div class="upload-options">
+                    <div class="upload-option">
+                        <h3>Single File Upload</h3>
+                        <form id="singleUploadForm" enctype="multipart/form-data">
+                            <input type="file" id="singleFile" name="file" required>
+                            <button type="submit" class="btn btn-primary">Upload File</button>
+                        </form>
+                    </div>
+                    <div class="upload-option">
+                        <h3>Multiple Files Upload</h3>
+                        <form id="multipleUploadForm" enctype="multipart/form-data">
+                            <input type="file" id="multipleFiles" name="files" multiple required>
+                            <button type="submit" class="btn btn-primary">Upload Files</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Options Section -->
+        <section class="download-section">
+            <div class="card">
+                <h2>Bulk Download Options</h2>
+                <div class="download-options">
+                    <button id="downloadZipBtn" class="btn btn-secondary">
+                        📦 Download All as ZIP
+                    </button>
+                    <button id="downloadBase64Btn" class="btn btn-secondary">
+                        🔤 Download All as Base64
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Files Table Section -->
+        <section class="files-section">
+            <div class="card">
+                <div class="files-header">
+                    <h2>Uploaded Files</h2>
+                    <button id="refreshBtn" class="btn btn-small">🔄 Refresh</button>
+                </div>
+                <div class="table-container">
+                    <table id="filesTable">
+                        <thead>
+                            <tr>
+                                <th>Filename</th>
+                                <th>Size</th>
+                                <th>Type</th>
+                                <th>Upload Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="filesTableBody">
+                            <tr>
+                                <td colspan="5" class="no-files">No files uploaded yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <!-- Rename Modal -->
+    <div id="renameModal" class="modal">
+        <div class="modal-content">
+            <h3>Rename File</h3>
+            <input type="text" id="newFilename" placeholder="Enter new filename">
+            <div class="modal-actions">
+                <button id="confirmRename" class="btn btn-primary">Rename</button>
+                <button id="cancelRename" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
